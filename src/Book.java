@@ -1,4 +1,4 @@
-public class Book {
+public class Book  {
     private String name;
     private Author author;
     private double price;
@@ -9,6 +9,7 @@ public class Book {
         this.price=price;
     }
     public Book(String name,Author author,double price,int qty){
+        super();
         this.name=name;
         this.author=author;
         this.price=price;
@@ -36,7 +37,16 @@ public class Book {
         return "Book[name= "+name+"Author["+"name= "+author.getName()+",email= "+
                 author.getEmail()+",gender= "+author.toString()+"]"+",price= "+price+",qty= "+qty+"]";
     }
+    public String getAuthorName() {
+        return author.getName();  // cannot use author.name as name is private in Author class
+    }
 
+    public String getAuthorEmail(){
+        return author.getEmail();
+    }
+    public char getAuthorGender(){
+        return author.getGender();
+    }
 
 
 
